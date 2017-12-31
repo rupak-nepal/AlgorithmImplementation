@@ -10,3 +10,5 @@ Geometry1z1.pdf attached here with.
 or 
 http://www.dcs.gla.ac.uk/~pat/52233/slides/Geometry1x1.pdf
 
+
+
