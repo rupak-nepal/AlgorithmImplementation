@@ -49,6 +49,8 @@ public class ViewPolygonWithTestPoint extends JFrame {
         ArrayList<Point> points = new ArrayList<Point>();
         points = getPolygonPoints();
         Point testPoint = new Point(3, 3);
+        
+        
 //        testPoint = getTestPoint();
         //arrange points in order to plot polygon.
         // but now draw as usual.
