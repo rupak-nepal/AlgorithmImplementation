@@ -31,7 +31,7 @@ http://www.dcs.gla.ac.uk/~pat/52233/slides/Geometry1x1.pdf
 Algorithm for plot a polygon with random number of points without crossing edges 
 
 1. find out lowest point.
-2. find angle betwen lowest point and other points respectiveyl
+2. find angle between lowest point and other points respectively
 	then create map of point with angle 
 3. create a array of points in ascending order based on angle made.
 4. plot the polygon based on that array.
