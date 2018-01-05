@@ -13,13 +13,13 @@ import np.com.rupak.point.inside.polygon.point.Point;
  * @author rupak
  */
 public class ViewPolygonWithTestPoint extends JFrame {
-    
+
     public static Point lowestPoint;
     public static ArrayList<Point> listOfPoint;
     public static Map<Point[], double[]> initialMap;
     public static Map<Point[], double[]> finalalMap;
-    public static Point [] pointsOtherThanLowestPoint;
-    public static double [] angleWithOtherPointsExceptLowestPoint;
+    public static Point[] pointsOtherThanLowestPoint;
+    public static double[] angleWithOtherPointsExceptLowestPoint;
 
     public ArrayList getLowestPoint(ArrayList<Point> list) {
 
@@ -31,35 +31,32 @@ public class ViewPolygonWithTestPoint extends JFrame {
         }
         lowestPoint.setX(pLowest.getX());
         lowestPoint.setY(pLowest.getY());
-        System.out.println("Smallest point is : (" + pLowest.getX() + "," + pLowest.getY() +")");
+        System.out.println("Smallest point is : (" + pLowest.getX() + "," + pLowest.getY() + ")");
         int i = 0;
-        for(Point pointt : list){
-            if(pointt.getX() == lowestPoint.getX()
-                    && pointt.getY() == lowestPoint.getY()){
+        for (Point pointt : list) {
+            if (pointt.getX() == lowestPoint.getX()
+                    && pointt.getY() == lowestPoint.getY()) {
                 System.out.println("Equal case only once. ");
-            }
-            else{
+            } else {
                 pointsOtherThanLowestPoint[i] = pointt;
-                angleWithOtherPointsExceptLowestPoint[i] = 
-                    getAngleBetweenLowestPointAndTargetPoint(pointt);
+                angleWithOtherPointsExceptLowestPoint[i]
+                        = getAngleBetweenLowestPointAndTargetPoint(pointt);
                 ++i;
             }
         }
-        
+
         //getArrayOfAnles with otherpoints...
-        for(int j = 0 ; j<pointsOtherThanLowestPoint.length; j++){
-            angleWithOtherPointsExceptLowestPoint[j] = 
-                    getAngleBetweenLowestPointAndTargetPoint(pointsOtherThanLowestPoint[j]);
+        for (int j = 0; j < pointsOtherThanLowestPoint.length; j++) {
+            angleWithOtherPointsExceptLowestPoint[j]
+                    = getAngleBetweenLowestPointAndTargetPoint(pointsOtherThanLowestPoint[j]);
         }
         initialMap.put(pointsOtherThanLowestPoint, angleWithOtherPointsExceptLowestPoint);
-        
+
         //now sort the above map based on ascending order of angle.
-        
-         pointsOtherThanLowestPoint[i] = pointt;
-                angleWithOtherPointsExceptLowestPoint[i] = 
-                    getAngleBetweenLowestPointAndTargetPoint(pointt);
-                ++i;
-        
+//         pointsOtherThanLowestPoint[i] = pointt;
+//                angleWithOtherPointsExceptLowestPoint[i] = 
+//                    getAngleBetweenLowestPointAndTargetPoint(pointt);
+//                ++i;
         return list;
     }
 
@@ -71,7 +68,7 @@ public class ViewPolygonWithTestPoint extends JFrame {
         list.add(new Point(600, 8));
         list.add(new Point(-100, 4));
         list.add(new Point(-500, 8));
-        
+
         return list;
     }
 
@@ -79,17 +76,23 @@ public class ViewPolygonWithTestPoint extends JFrame {
         Point testPoint = new Point(3, 3);
         return testPoint;
     }
-    
-    public double getAngleBetweenLowestPointAndTargetPoint(Point p){
-        double angle = Math.atan((
-                (p.getY()-lowestPoint.getY())
-                        /
-                        (p.getX() - lowestPoint.getX())
-                ));
+
+    public double getAngleBetweenLowestPointAndTargetPoint(Point p) {
+        double angle = Math.atan(((p.getY() - lowestPoint.getY())
+                / (p.getX() - lowestPoint.getX())));
         return angle;
     }
 
-    public ViewPolygonWithTestPoint() {
+    public double getFinalMapOfOrderedPoint(Map<Point[], double[]> finalalMap) {
+    Map<Point[], double[]> orderedMap;
+    Point[] orderedPoint;
+    double[] orderedAngles;
+    double angle = Math.atan(((p.getY() - lowestPoint.getY())
+            / (p.getX() - lowestPoint.getX())));
+    return angle ;
+}
+
+public ViewPolygonWithTestPoint() {
         super("Polygon with test point.");
         setSize(770, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -118,7 +121,7 @@ public class ViewPolygonWithTestPoint extends JFrame {
     }
 
     @Override
-    public void paint(Graphics g) {
+        public void paint(Graphics g) {
         super.paint(g);
         drawLines(g);
     }
