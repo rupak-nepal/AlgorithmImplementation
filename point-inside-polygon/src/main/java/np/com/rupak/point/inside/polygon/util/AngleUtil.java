@@ -37,9 +37,7 @@ public class AngleUtil {
                 System.out.println("normal angle :"+angle);
 //                totalAngle =+ normalAngle;
             }
-            
             angles[i] = angle;
-
         }
         
         for(int k = 0; k<angles.length; k++){
