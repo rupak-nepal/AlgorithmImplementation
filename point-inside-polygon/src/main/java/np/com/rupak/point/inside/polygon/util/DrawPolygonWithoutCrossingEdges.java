@@ -1,9 +1,8 @@
-package np.com.rupak.point.inside.polygon.ui;
+package np.com.rupak.point.inside.polygon.util;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Map;
 import javax.swing.JFrame;
 import np.com.rupak.point.inside.polygon.point.Point;
@@ -12,7 +11,7 @@ import np.com.rupak.point.inside.polygon.point.Point;
  *
  * @author rupak
  */
-public class ViewPolygonWithTestPoint extends JFrame {
+public class DrawPolygonWithoutCrossingEdges extends JFrame {
 
     public static Point lowestPoint;
     public static ArrayList<Point> listOfPoint;
@@ -62,12 +61,13 @@ public class ViewPolygonWithTestPoint extends JFrame {
 
     public ArrayList<Point> preparePolygonPoints() {
         ArrayList<Point> list = new ArrayList<Point>();
-        list.add(new Point(100, 1000));
-        list.add(new Point(-3, 842));
-        list.add(new Point(40, 444));
-        list.add(new Point(600, 8));
-        list.add(new Point(-100, 4));
-        list.add(new Point(-500, 8));
+        list.add(new Point(150, 150));
+        list.add(new Point(250, 100));
+        list.add(new Point(325, 125));
+        list.add(new Point(375, 225));
+        list.add(new Point(450, 250));
+        list.add(new Point(275, 375));
+        list.add(new Point(100, 300));
 
         return list;
     }
@@ -83,16 +83,22 @@ public class ViewPolygonWithTestPoint extends JFrame {
         return angle;
     }
 
-    public double getFinalMapOfOrderedPoint(Map<Point[], double[]> finalalMap) {
-    Map<Point[], double[]> orderedMap;
-    Point[] orderedPoint;
-    double[] orderedAngles;
-    double angle = Math.atan(((p.getY() - lowestPoint.getY())
-            / (p.getX() - lowestPoint.getX())));
-    return angle ;
-}
+    public Map<Point[], double[]> getFinalMapOfOrderedPoint(Map<Point[], double[]> initialMap) {
+        Map<Point[], double[]> orderedMap;
+        Point[] orderedPoint;
+        double [] orderedAngle;
+        for(int k = 0; k<initialMap.keySet().size(); k++){
+            
+        }
+        
+//    double[] orderedAngles;
+//    double angle = Math.atan(((p.getY() - lowestPoint.getY())
+//            / (p.getX() - lowestPoint.getX())));
+//    return angle ;
+        return null;
+    }
 
-public ViewPolygonWithTestPoint() {
+    public DrawPolygonWithoutCrossingEdges() {
         super("Polygon with test point.");
         setSize(770, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -102,7 +108,7 @@ public ViewPolygonWithTestPoint() {
     void drawLines(Graphics g) {//, Point[] polygonPoints, Point testPoint){
         Graphics2D gd = (Graphics2D) g;
         ArrayList<Point> points = new ArrayList<Point>();
-        points = getPolygonPoints();
+//        points = getPolygonPoints();
         Point testPoint = new Point(3, 3);
 
 //        testPoint = getTestPoint();
@@ -121,7 +127,7 @@ public ViewPolygonWithTestPoint() {
     }
 
     @Override
-        public void paint(Graphics g) {
+    public void paint(Graphics g) {
         super.paint(g);
         drawLines(g);
     }
