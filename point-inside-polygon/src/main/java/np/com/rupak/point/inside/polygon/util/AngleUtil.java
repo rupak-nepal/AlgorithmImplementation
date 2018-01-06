@@ -55,6 +55,7 @@ public class AngleUtil {
             System.out.println("Test Point is outside Polygon");
         }
     }
+    
 
     public static double getAngleInDegreeWithTestPoint(Point initalPoint, Point finalPoint) {
         int vectorFirstXComponent = initalPoint.getX() - testPoint.getX();
