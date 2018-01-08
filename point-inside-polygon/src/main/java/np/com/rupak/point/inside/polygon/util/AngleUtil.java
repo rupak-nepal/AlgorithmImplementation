@@ -41,12 +41,12 @@ public class AngleUtil {
         }
         
         for(int k = 0; k<angles.length; k++){
-            System.out.println("angle : "+angles[k]);
+//            System.out.println("angle : "+angles[k]);
             totalAngle += angles[k];
         }
         System.out.println("Total angle in radian is :" + totalAngle);
         System.out.println("Total angle in degrees is :" + Math.toDegrees(totalAngle));
-        System.out.println("Total angle in degrees with rouding is :" +
+        System.out.println("::" +
                 Math.round(Math.toDegrees(totalAngle)));
         totalAngle = Math.round(Math.toDegrees(totalAngle));
         if (Math.round(totalAngle) == 360) {
@@ -100,7 +100,7 @@ public class AngleUtil {
     }
 
     public static Point prepareTestPoint() {
-        Point checkPoint = new Point(300,30);//170, 200);//
+        Point checkPoint = new Point(300,120);//170, 200);//
         return checkPoint;
     }
 

@@ -48,7 +48,7 @@ public class JavaGraphics {
                 super.paintComponent(g);
                 g.setColor(Color.BLUE);
                 g.drawPolygon(poly);
-                g.drawString("-Test Point-", testPoint.getX(), testPoint.getY());
+                g.drawString("::", testPoint.getX(), testPoint.getY());
             }
 
             @Override
