@@ -2,7 +2,8 @@ package np.com.rupak.point.inside.polygon.util;
 
 import np.com.rupak.point.inside.polygon.ui.JavaGraphics;
 import java.util.ArrayList;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
+
 import np.com.rupak.point.inside.polygon.point.Point;
 
 /**
@@ -46,12 +47,14 @@ public class AngleUtil {
         }
         System.out.println("Total angle in radian is :" + totalAngle);
         System.out.println("Total angle in degrees is :" + Math.toDegrees(totalAngle));
-        System.out.println("::" +
+        System.out.println(":-:" +
                 Math.round(Math.toDegrees(totalAngle)));
         totalAngle = Math.round(Math.toDegrees(totalAngle));
         if (Math.round(totalAngle) == 360) {
+            JOptionPane.showMessageDialog(null,"Test point is inside Polygon");
             System.out.println("Test Point is inside Polygon");
         } else {
+            JOptionPane.showMessageDialog(null,"Test Point is outside Polygon");
             System.out.println("Test Point is outside Polygon");
         }
     }
